@@ -51,7 +51,7 @@
             background-size: 50px 50px;
             opacity: 0.05;
         }
-        /* POPRAWKA: Linia łącząca teraz jest pozycjonowana względem środka ikon (wysokość ikon to h-20 czyli 5rem, połowa to 2.5rem) */
+        /* POPRAWKA: Linia łącząca teraz jest pozycjonowana względem środka ikon */
         .step-connector-desktop {
             position: absolute;
             top: 2.5rem; /* Środek ikony */
@@ -61,6 +61,14 @@
             background: linear-gradient(to right, transparent, #D4AF37, transparent);
             z-index: 0;
             transform: translateY(-50%);
+        }
+        
+        /* Styl przerywanej linii do Value Stack */
+        .dashed-line {
+            background-image: linear-gradient(to right, #374151 50%, rgba(255,255,255,0) 0%);
+            background-position: bottom;
+            background-size: 10px 1px;
+            background-repeat: repeat-x;
         }
     </style>
 </head>
@@ -544,7 +552,7 @@
         </div>
     </section>
 
-    <!-- Pricing Section (Updated Clarity) -->
+    <!-- Pricing Section (Updated Value Stack) -->
     <section id="pricing" class="py-24 relative overflow-hidden">
         <div class="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-executive-gold opacity-5 blur-[150px] rounded-full -translate-x-1/2 -translate-y-1/2 z-0"></div>
         
@@ -558,76 +566,100 @@
                 <span data-lang="pl" class="hidden">Taniej niż godzina słabej terapii.</span>
             </p>
 
-            <div class="bg-gray-900/80 backdrop-blur-xl border border-executive-gold rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden text-left">
-                <div class="absolute top-0 right-0 bg-executive-gold text-black text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-widest">
-                    <span data-lang="en">Launch Offer</span>
-                    <span data-lang="pl" class="hidden">Oferta Launch</span>
+            <div class="bg-gray-900/80 backdrop-blur-xl border border-executive-gold rounded-3xl overflow-hidden shadow-2xl relative text-left">
+                <!-- Header Gold -->
+                <div class="bg-executive-gold text-black p-4 text-center">
+                    <h3 class="font-black text-xl md:text-2xl uppercase tracking-tighter">
+                        <span data-lang="en">THE EXECUTIVE LIFE OS PROTOCOL</span>
+                        <span data-lang="pl" class="hidden">PROTOKÓŁ EXECUTIVE LIFE OS</span>
+                    </h3>
                 </div>
 
-                <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-800 pb-8 mb-8">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">The Executive Life OS</h3>
-                        <p class="text-executive-gold font-bold mt-1">
-                            <span data-lang="en">+ 2025/2026 Strategy Pack</span>
-                            <span data-lang="pl" class="hidden">+ Pakiet Strategiczny 2025/2026</span>
-                        </p>
+                <div class="p-8 md:p-12">
+                    <!-- Value Stack List -->
+                    <div class="space-y-6 mb-8">
+                        
+                        <!-- Item 1 -->
+                        <div class="flex justify-between items-center text-sm md:text-base border-b border-gray-800 pb-3 dashed-line">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-executive-gold"></i>
+                                <span class="font-bold text-white">
+                                    <span data-lang="en">The Executive Life OS (Core System)</span>
+                                    <span data-lang="pl" class="hidden">System Operacyjny Executive Life OS</span>
+                                </span>
+                            </div>
+                            <div class="text-gray-400 font-mono">$197</div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="flex justify-between items-center text-sm md:text-base border-b border-gray-800 pb-3 dashed-line">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-executive-gold"></i>
+                                <span class="font-bold text-white">
+                                    <span data-lang="en">The Board of Directors (5 AI Agents)</span>
+                                    <span data-lang="pl" class="hidden">Rada Nadzorcza (5 Agentów AI)</span>
+                                </span>
+                            </div>
+                            <div class="text-gray-400 font-mono">$97</div>
+                        </div>
+
+                         <!-- Item 3 -->
+                         <div class="flex justify-between items-center text-sm md:text-base border-b border-gray-800 pb-3 dashed-line">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-check-circle text-executive-gold"></i>
+                                <span class="font-bold text-white">
+                                    <span data-lang="en">2026 Strategy Audit Workbook</span>
+                                    <span data-lang="pl" class="hidden">Workbook Strategiczny "Audyt 2026"</span>
+                                </span>
+                            </div>
+                            <div class="text-gray-400 font-mono">$49</div>
+                        </div>
+
+                        <!-- Item 4 (BONUS) -->
+                        <div class="flex justify-between items-center text-sm md:text-base border-b border-gray-800 pb-3 dashed-line">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-star text-executive-gold animate-pulse"></i>
+                                <span class="font-bold text-executive-gold">
+                                    <span data-lang="en">BONUS: "One Task" Decision Protocol</span>
+                                    <span data-lang="pl" class="hidden">BONUS: Protokół Decyzyjny "One Task"</span>
+                                </span>
+                            </div>
+                            <div class="text-gray-400 font-mono">$49</div>
+                        </div>
+
+                        <!-- TOTAL VALUE ROW -->
+                         <div class="flex justify-between items-center text-base md:text-lg pt-2 opacity-50">
+                            <div class="font-bold text-gray-500 uppercase tracking-widest">
+                                <span data-lang="en">TOTAL VALUE</span>
+                                <span data-lang="pl" class="hidden">WARTOŚĆ CAŁKOWITA</span>
+                            </div>
+                            <div class="text-gray-500 font-mono line-through decoration-red-500 decoration-2">$392</div>
+                        </div>
+
                     </div>
-                    <div class="text-right mt-4 md:mt-0">
-                        <p class="text-gray-500 line-through text-lg">$197</p>
-                        <p class="text-5xl font-black text-white">$49</p>
+
+                    <!-- Final Price & CTA -->
+                    <div class="text-center">
+                        <div class="text-sm text-executive-gold font-bold uppercase tracking-widest mb-2">
+                            <span data-lang="en">Limited Launch Offer (Beta Access)</span>
+                            <span data-lang="pl" class="hidden">Oferta Limitowana (Beta Access)</span>
+                        </div>
+                        <div class="text-6xl md:text-7xl font-black text-white mb-8 tracking-tighter">
+                            $49
+                        </div>
+
+                        <a href="#" class="block w-full py-5 bg-executive-gold text-black font-black text-xl rounded-xl hover:bg-white transition duration-300 transform hover:scale-[1.02] shadow-[0_0_30px_rgba(212,175,55,0.4)] text-center mb-4">
+                            <span data-lang="en">START BUILDING NOW</span>
+                            <span data-lang="pl" class="hidden">ZACZNIJ BUDOWAĆ TERAZ</span>
+                        </a>
+
+                        <div class="flex justify-center items-center gap-2 text-xs text-gray-500">
+                            <i class="fas fa-lock"></i>
+                            <span data-lang="en">Secure Payment. 30-Day Guarantee.</span>
+                            <span data-lang="pl" class="hidden">Bezpieczna płatność. 30 dni gwarancji.</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="space-y-4 mb-10">
-                    <!-- NEW CLARITY POINT -->
-                     <div class="flex items-start gap-3 bg-executive-panel/50 p-3 rounded-lg border border-executive-gold/30">
-                        <i class="fas fa-cube text-executive-gold mt-1"></i>
-                        <span class="text-gray-200 text-sm">
-                            <span data-lang="en"><strong>What you get:</strong> Advanced Notion Template + Comprehensive AI Prompt Library (PDF). <strong>No subscription required.</strong></span>
-                            <span data-lang="pl" class="hidden"><strong>Co otrzymujesz:</strong> Zaawansowany Szablon Notion + Biblioteka Promptów AI (PDF). <strong>Brak subskrypcji.</strong></span>
-                        </span>
-                    </div>
-                    <!-- End New Point -->
-
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-check text-executive-gold mt-1"></i>
-                        <span class="text-gray-200">
-                            <span data-lang="en"><strong>The Chief of Staff Agent:</strong> Builds your psychological profile.</span>
-                            <span data-lang="pl" class="hidden"><strong>Agent "Szef Sztabu":</strong> Buduje Twój profil psychologiczny.</span>
-                        </span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-check text-executive-gold mt-1"></i>
-                        <span class="text-gray-200">
-                            <span data-lang="en"><strong>The Full Board (5 Agents):</strong> CEO, COO, CFO, Coach, Risk Officer.</span>
-                            <span data-lang="pl" class="hidden"><strong>Pełna Rada (5 Agentów):</strong> CEO, COO, CFO, Coach, Risk Officer.</span>
-                        </span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-check text-executive-gold mt-1"></i>
-                        <span class="text-gray-200">
-                            <span data-lang="en"><strong>The "One Task" Protocol:</strong> Decision matrix prompt.</span>
-                            <span data-lang="pl" class="hidden"><strong>Protokół "One Task":</strong> Matryca decyzyjna.</span>
-                        </span>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-check text-executive-gold mt-1"></i>
-                        <span class="text-gray-200">
-                            <span data-lang="en"><strong>Bonus:</strong> The "2025 Autopsy" Audit Workbook.</span>
-                            <span data-lang="pl" class="hidden"><strong>Bonus:</strong> Workbook Audytowy "Autopsja 2025".</span>
-                        </span>
-                    </div>
-                </div>
-
-                <a href="#" class="block w-full py-5 bg-executive-gold text-black font-black text-xl rounded-xl hover:bg-white transition duration-300 transform hover:scale-[1.02] shadow-lg text-center">
-                    <span data-lang="en">DOWNLOAD SYSTEM &bull; $49</span>
-                    <span data-lang="pl" class="hidden">POBIERZ SYSTEM &bull; $49</span>
-                </a>
-                <!-- Updated clarity text below button -->
-                <p class="mt-4 text-xs text-center text-gray-500">
-                    <span data-lang="en">One-time payment. Instant digital download. Works with Free ChatGPT/Claude & Notion.</span>
-                    <span data-lang="pl" class="hidden">Opłata jednorazowa. Natychmiastowy download. Działa z darmowym ChatGPT/Claude oraz Notion.</span>
-                </p>
             </div>
         </div>
     </section>
