@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Executive Life OS | Me, Inc.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'executive-black': '#050505',
+                        'executive-panel': '#0F0F0F',
+                        'executive-gold': '#D4AF37', 
+                        'executive-gold-dim': '#8A7120',
+                        'executive-gold-hover': '#F2D06B',
+                        'alert-red': '#991B1B',
+                        'success-green': '#15803D',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e5e5;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(to right, #D4AF37, #F2D06B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-pattern {
+            background-image: linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.05;
+        }
+        .chat-bubble {
+            position: relative;
+        }
+        .chat-bubble::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent #1a1a1a transparent transparent;
+        }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <!-- Top Bar -->
+    <div class="bg-executive-gold text-black text-[10px] md:text-xs font-bold text-center py-2 uppercase tracking-widest sticky top-0 z-50">
+        <span data-lang="en">🚀 2026 Strategy Edition Available. Launch Price: $49 (Ends Sunday)</span>
+        <span data-lang="pl" class="hidden">🚀 Edycja Strategiczna 2026 Dostępna. Cena Launch: $49 (Do Niedzieli)</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center relative z-40 bg-executive-black/80 backdrop-blur-md">
+        <div class="text-2xl font-black tracking-tighter text-white">
+            ME, INC.<span class="text-executive-gold">.</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <!-- Language Switcher -->
+            <div class="flex items-center bg-executive-panel rounded-full p-1 border border-gray-800">
+                <button id="lang-en" class="px-3 py-1 rounded-full text-xs font-bold bg-executive-gold text-black transition duration-300">EN</button>
+                <button id="lang-pl" class="px-3 py-1 rounded-full text-xs font-bold text-gray-500 hover:text-white transition duration-300">PL</button>
+            </div>
+            <a href="#pricing" class="hidden md:block bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-gray-200 transition duration-300 text-sm uppercase tracking-wide">
+                <span data-lang="en">Hire The Board</span>
+                <span data-lang="pl" class="hidden">Zatrudnij Zarząd</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-12 pb-24 overflow-hidden">
+        <div class="absolute inset-0 hero-pattern z-0"></div>
+        <!-- Ambient Light -->
+        <div class="absolute top-0 left-1/2 w-[500px] h-[500px] bg-executive-gold opacity-10 blur-[150px] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-800 bg-gray-900/50 mb-8 backdrop-blur-sm animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">
+                    <span data-lang="en">AI-Powered Executive Framework</span>
+                    <span data-lang="pl" class="hidden">Framework Egzekutywny AI</span>
+                </span>
+            </div>
+
+            <h1 class="text-4xl md:text-7xl font-black leading-[1.1] mb-8 tracking-tight">
+                <span data-lang="en">You are the CEO.<br>Where is your <span class="gold-gradient-text">Board</span>?</span>
+                <span data-lang="pl" class="hidden">Jesteś CEO swojego życia.<br>Gdzie jest Twój <span class="gold-gradient-text">Zarząd</span>?</span>
+            </h1>
+
+            <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+                <span data-lang="en">Don't guess. Execute. The first <strong>AI Operating System</strong> that builds your psychological profile and manages your life like a Fortune 500 company.</span>
+                <span data-lang="pl" class="hidden">Nie zgaduj. Egzekwuj. Pierwszy <strong>System Operacyjny AI</strong>, który buduje Twój profil psychologiczny i zarządza Twoim życiem jak spółką z Fortune 500.</span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                <a href="#pricing" class="w-full sm:w-auto px-8 py-4 bg-executive-gold text-black font-bold rounded-lg hover:bg-executive-gold-hover transition duration-300 text-lg shadow-[0_0_25px_rgba(212,175,55,0.25)] flex items-center justify-center gap-3">
+                    <span data-lang="en">Start 2026 Audit Now</span>
+                    <span data-lang="pl" class="hidden">Rozpocznij Audyt 2026</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#how-it-works" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition duration-300 text-lg">
+                    <span data-lang="en">See The Protocol</span>
+                    <span data-lang="pl" class="hidden">Zobacz Protokół</span>
+                </a>
+            </div>
+
+            <!-- UI MOCKUP - The "Verdict" Interface -->
+            <div class="relative mx-auto max-w-3xl bg-executive-panel border border-gray-800 rounded-xl shadow-2xl overflow-hidden text-left">
+                <div class="bg-black/50 px-4 py-3 border-b border-gray-800 flex items-center gap-2">
+                    <div class="flex gap-1.5">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="ml-4 text-xs text-gray-500 font-mono">Me_Inc_Board_Room.exe</div>
+                </div>
+                <div class="p-6 md:p-8 space-y-6 font-mono text-sm md:text-base">
+                    <!-- User Input -->
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded bg-gray-700 flex-shrink-0 flex items-center justify-center font-bold">ME</div>
+                        <div class="text-gray-400 pt-1">
+                            <span data-lang="en">"I have 3 projects, not enough time, and I feel stuck. What should I do today?"</span>
+                            <span data-lang="pl" class="hidden">"Mam 3 projekty, za mało czasu i czuję, że stoję w miejscu. Co mam dziś zrobić?"</span>
+                        </div>
+                    </div>
+                    <!-- AI Output -->
+                    <div class="flex gap-4">
+                        <div class="w-8 h-8 rounded bg-executive-gold text-black flex-shrink-0 flex items-center justify-center"><i class="fas fa-gavel"></i></div>
+                        <div class="text-gray-200 w-full pt-1">
+                            <div class="mb-4 text-executive-gold font-bold text-xs uppercase tracking-widest">
+                                <span data-lang="en">THE BOARD VERDICT</span>
+                                <span data-lang="pl" class="hidden">WERDYKT RADY</span>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div class="bg-black/40 p-3 rounded border border-gray-800">
+                                    <div class="text-xs text-gray-500 mb-1">FACTS</div>
+                                    <div class="text-red-400">Resource deficit. Analysis paralysis detected.</div>
+                                </div>
+                                <div class="bg-black/40 p-3 rounded border border-gray-800">
+                                    <div class="text-xs text-gray-500 mb-1">DECISION</div>
+                                    <div class="text-white font-bold">Kill Projects B & C immediately.</div>
+                                </div>
+                            </div>
+
+                            <p class="mb-4">
+                                <span data-lang="en">You are procrastinating by over-planning. Your cognitive load is too high.</span>
+                                <span data-lang="pl" class="hidden">Prokrastynujesz poprzez nadmierne planowanie. Twoje obciążenie poznawcze jest zbyt duże.</span>
+                            </p>
+
+                            <div class="bg-executive-gold/10 border border-executive-gold/30 p-4 rounded text-center mb-4">
+                                <div class="text-xs text-executive-gold uppercase font-bold mb-1">ONE TASK (NON-NEGOTIABLE)</div>
+                                <div class="text-white font-bold text-lg">
+                                    <span data-lang="en">Email Client X with the offer. Do it in 15 mins.</span>
+                                    <span data-lang="pl" class="hidden">Wyślij ofertę do Klienta X. Masz na to 15 min.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 text-xs">
+                                <span class="text-green-500"><i class="fas fa-arrow-up"></i> Best Case: Deal closed. Momentum regained.</span>
+                                <span class="text-red-500 md:ml-4"><i class="fas fa-arrow-down"></i> Worst Case: You burn out by Friday.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Phase 1: The Chief of Staff (Identity) -->
+    <section id="how-it-works" class="py-24 bg-executive-panel border-y border-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-24">
+                <div class="w-full md:w-1/2">
+                    <div class="text-executive-gold font-bold tracking-widest uppercase text-sm mb-2">
+                        <span data-lang="en">Step 1: Identity Extraction</span>
+                        <span data-lang="pl" class="hidden">Krok 1: Ekstrakcja Tożsamości</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-black mb-6">
+                        <span data-lang="en">Meet "The Chief of Staff"</span>
+                        <span data-lang="pl" class="hidden">Poznaj "Szefa Sztabu"</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        <span data-lang="en">Other AI tools don't know you. They guess. <strong>The Chief of Staff</strong> is an intake agent that conducts a deep psychological interview with you (Values, Fears, Personality, Ambitions).</span>
+                        <span data-lang="pl" class="hidden">Inne narzędzia AI Cię nie znają. Zgadują. <strong>Szef Sztabu</strong> to agent, który przeprowadza z Tobą głęboki wywiad psychologiczny (Wartości, Lęki, Osobowość, Ambicje).</span>
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-executive-gold mt-1"></i>
+                            <span class="text-gray-300">
+                                <span data-lang="en">Analyzes your Motivation triggers (Fear vs. Reward).</span>
+                                <span data-lang="pl" class="hidden">Analizuje Twoje motywatory (Strach vs. Nagroda).</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-executive-gold mt-1"></i>
+                            <span class="text-gray-300">
+                                <span data-lang="en">Determines your Communication Style.</span>
+                                <span data-lang="pl" class="hidden">Określa Twój styl komunikacji.</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-executive-gold mt-1"></i>
+                            <span class="text-gray-300">
+                                <span data-lang="en"><strong>RESULT:</strong> Creates your "System Instruction Code" that aligns the entire Board to YOU.</span>
+                                <span data-lang="pl" class="hidden"><strong>WYNIK:</strong> Tworzy Twój "Kod Instrukcji Systemowej", który kalibruje całą Radę pod CIEBIE.</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 relative">
+                    <div class="absolute inset-0 bg-executive-gold blur-[100px] opacity-10"></div>
+                    <div class="bg-black border border-gray-800 p-8 rounded-2xl relative z-10">
+                        <div class="font-mono text-xs text-gray-500 mb-4 border-b border-gray-800 pb-2">SYSTEM_GENERATION_LOG</div>
+                        <div class="space-y-2 text-sm font-mono">
+                            <div class="text-green-500">> Initiating Personality Scan...</div>
+                            <div class="text-gray-400">> User Type: High-Achiever / Perfectionist</div>
+                            <div class="text-gray-400">> Weakness: Analysis Paralysis</div>
+                            <div class="text-gray-400">> Communication Preference: Brutally Honest</div>
+                            <div class="text-executive-gold animate-pulse">> GENERATING "ME_INC_PROFILE.txt"... [100%]</div>
+                            <div class="mt-4 p-3 bg-gray-900 rounded border border-gray-700 text-gray-300 italic">
+                                "This user responds best to data-driven pressure. Do not use soft language. Focus on ROI."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 2: The Board Members -->
+    <section class="py-24 bg-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="text-executive-gold font-bold tracking-widest uppercase text-sm mb-2">
+                    <span data-lang="en">Step 2: The Council</span>
+                    <span data-lang="pl" class="hidden">Krok 2: Rada Nadzorcza</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black mb-6 text-white">
+                    <span data-lang="en">5 Agents. One Mission.<br>Your Success.</span>
+                    <span data-lang="pl" class="hidden">5 Agentów. Jedna Misja.<br>Twój Sukces.</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+                
+                <!-- CEO -->
+                <div class="bg-executive-panel border border-gray-800 p-6 rounded-xl hover:border-executive-gold transition group">
+                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4 text-white text-xl group-hover:bg-executive-gold group-hover:text-black transition">
+                        <i class="fas fa-chess-king"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-1">THE CEO</h3>
+                    <div class="text-xs text-executive-gold uppercase tracking-widest mb-3">Vision & Strategy</div>
+                    <p class="text-sm text-gray-400">
+                        <span data-lang="en">Focuses on the "North Star". Ignores your excuses. Makes the hard 2026 strategic calls.</span>
+                        <span data-lang="pl" class="hidden">Skupiony na "Gwieździe Północy". Ignoruje wymówki. Podejmuje trudne decyzje strategiczne na 2026.</span>
+                    </p>
+                </div>
+
+                <!-- COO -->
+                <div class="bg-executive-panel border border-gray-800 p-6 rounded-xl hover:border-executive-gold transition group">
+                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4 text-white text-xl group-hover:bg-executive-gold group-hover:text-black transition">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-1">THE COO</h3>
+                    <div class="text-xs text-executive-gold uppercase tracking-widest mb-3">Execution & Friction</div>
+                    <p class="text-sm text-gray-400">
+                        <span data-lang="en">The Procrastination Killer. Breaks big goals into 15-min tasks. Holds you accountable for yesterday.</span>
+                        <span data-lang="pl" class="hidden">Zabójca Prokrastynacji. Rozbija cele na 15-min zadania. Rozlicza Cię z dnia wczorajszego.</span>
+                    </p>
+                </div>
+
+                <!-- CFO -->
+                <div class="bg-executive-panel border border-gray-800 p-6 rounded-xl hover:border-executive-gold transition group">
+                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4 text-white text-xl group-hover:bg-executive-gold group-hover:text-black transition">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-1">THE CFO</h3>
+                    <div class="text-xs text-executive-gold uppercase tracking-widest mb-3">Resources (Time/$$)</div>
+                    <p class="text-sm text-gray-400">
+                        <span data-lang="en">Audits your calendar like a balance sheet. Finds where you are "bleeding" time and money.</span>
+                        <span data-lang="pl" class="hidden">Audytuje Twój kalendarz jak bilans. Znajduje miejsca, gdzie "krwawisz" czasem i pieniędzmi.</span>
+                    </p>
+                </div>
+
+                <!-- COACH -->
+                <div class="bg-executive-panel border border-gray-800 p-6 rounded-xl hover:border-executive-gold transition group">
+                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4 text-white text-xl group-hover:bg-executive-gold group-hover:text-black transition">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-1">THE COACH</h3>
+                    <div class="text-xs text-executive-gold uppercase tracking-widest mb-3">Performance & Mind</div>
+                    <p class="text-sm text-gray-400">
+                        <span data-lang="en">Adapts to you. Needs a hug? You get it. Need a kick in the ass? You get it. Manages your energy.</span>
+                        <span data-lang="pl" class="hidden">Dostosowuje się. Potrzebujesz wsparcia? Dostajesz. Potrzebujesz kopa? Dostajesz. Zarządza energią.</span>
+                    </p>
+                </div>
+
+                <!-- RISK OFFICER -->
+                <div class="bg-executive-panel border border-gray-800 p-6 rounded-xl hover:border-executive-gold transition group">
+                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4 text-white text-xl group-hover:bg-executive-gold group-hover:text-black transition">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-white mb-1">RISK OFFICER</h3>
+                    <div class="text-xs text-executive-gold uppercase tracking-widest mb-3">Worst Case Scenario</div>
+                    <p class="text-sm text-gray-400">
+                        <span data-lang="en">The professional pessimist. Simulates "What if you fail?" so you can prepare Plan B.</span>
+                        <span data-lang="pl" class="hidden">Profesjonalny pesymista. Symuluje "Co jeśli się nie uda?", byś miał gotowy Plan B.</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 3: The Two Modes -->
+    <section class="py-24 bg-executive-panel border-y border-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="text-executive-gold font-bold tracking-widest uppercase text-sm mb-2">
+                    <span data-lang="en">Operating Rhythm</span>
+                    <span data-lang="pl" class="hidden">Rytm Operacyjny</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black mb-6 text-white">
+                    <span data-lang="en">Two Modes of Operation</span>
+                    <span data-lang="pl" class="hidden">Dwa Tryby Działania</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Mode 1 -->
+                <div class="bg-black p-8 rounded-2xl border border-gray-800 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-bl-lg uppercase">Daily</div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <i class="fas fa-bolt text-executive-gold"></i>
+                        <span data-lang="en">The War Room</span>
+                        <span data-lang="pl" class="hidden">The War Room</span>
+                    </h3>
+                    <p class="text-gray-400 mb-6 min-h-[50px]">
+                        <span data-lang="en">Ad-hoc tactical support. Instant decision making. Friction removal on the fly.</span>
+                        <span data-lang="pl" class="hidden">Taktyczne wsparcie Ad-hoc. Błyskawiczne decyzje. Usuwanie tarcia w locie.</span>
+                    </p>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-gray-900 rounded border-l-2 border-executive-gold text-sm text-gray-300">
+                            <span class="block text-xs text-gray-500 uppercase mb-1">INPUT</span>
+                            "Nie chce mi się ćwiczyć."
+                        </div>
+                        <div class="p-3 bg-gray-900 rounded border-l-2 border-green-500 text-sm text-gray-300">
+                            <span class="block text-xs text-gray-500 uppercase mb-1">OUTPUT</span>
+                            "Załóż buty. Tylko tyle. Masz na to 30 sekund."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mode 2 -->
+                <div class="bg-black p-8 rounded-2xl border border-gray-800 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-executive-gold text-black text-xs font-bold px-3 py-1 rounded-bl-lg uppercase">Strategic</div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <i class="fas fa-users text-executive-gold"></i>
+                        <span data-lang="en">The Board Meeting</span>
+                        <span data-lang="pl" class="hidden">Posiedzenie Zarządu</span>
+                    </h3>
+                    <p class="text-gray-400 mb-6 min-h-[50px]">
+                        <span data-lang="en">Deep dive periodic audits (Monthly/Annual). "2025 Autopsy & 2026 Roadmap".</span>
+                        <span data-lang="pl" class="hidden">Głębokie audyty okresowe (Miesięczne/Roczne). "Autopsja 2025 i Mapa 2026".</span>
+                    </p>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-gray-900 rounded border-l-2 border-executive-gold text-sm text-gray-300">
+                            <span class="block text-xs text-gray-500 uppercase mb-1">INPUT</span>
+                            "Podsumujmy finansowo Q4 2025."
+                        </div>
+                        <div class="p-3 bg-gray-900 rounded border-l-2 border-green-500 text-sm text-gray-300">
+                            <span class="block text-xs text-gray-500 uppercase mb-1">OUTPUT</span>
+                            "Tabela Raportowa w Notion + Plan naprawczy wygenerowany."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-executive-gold opacity-5 blur-[150px] rounded-full -translate-x-1/2 -translate-y-1/2 z-0"></div>
+        
+        <div class="max-w-3xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                <span data-lang="en">Invest in Your 2026</span>
+                <span data-lang="pl" class="hidden">Zainwestuj w Swój 2026</span>
+            </h2>
+            <p class="text-xl text-gray-400 mb-12">
+                <span data-lang="en">Cheaper than one hour of bad therapy.</span>
+                <span data-lang="pl" class="hidden">Taniej niż godzina słabej terapii.</span>
+            </p>
+
+            <div class="bg-gray-900/80 backdrop-blur-xl border border-executive-gold rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden text-left">
+                <div class="absolute top-0 right-0 bg-executive-gold text-black text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-widest">
+                    <span data-lang="en">Launch Offer</span>
+                    <span data-lang="pl" class="hidden">Oferta Launch</span>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-800 pb-8 mb-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">The Executive Life OS</h3>
+                        <p class="text-executive-gold font-bold mt-1">
+                            <span data-lang="en">+ 2025/2026 Strategy Pack</span>
+                            <span data-lang="pl" class="hidden">+ Pakiet Strategiczny 2025/2026</span>
+                        </p>
+                    </div>
+                    <div class="text-right mt-4 md:mt-0">
+                        <p class="text-gray-500 line-through text-lg">$197</p>
+                        <p class="text-5xl font-black text-white">$49</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 mb-10">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check text-executive-gold mt-1"></i>
+                        <span class="text-gray-200">
+                            <span data-lang="en"><strong>The Chief of Staff Agent:</strong> Builds your psychological profile.</span>
+                            <span data-lang="pl" class="hidden"><strong>Agent "Szef Sztabu":</strong> Buduje Twój profil psychologiczny.</span>
+                        </span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check text-executive-gold mt-1"></i>
+                        <span class="text-gray-200">
+                            <span data-lang="en"><strong>The Full Board (5 Agents):</strong> CEO, COO, CFO, Coach, Risk Officer.</span>
+                            <span data-lang="pl" class="hidden"><strong>Pełna Rada (5 Agentów):</strong> CEO, COO, CFO, Coach, Risk Officer.</span>
+                        </span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check text-executive-gold mt-1"></i>
+                        <span class="text-gray-200">
+                            <span data-lang="en"><strong>The "One Task" Protocol:</strong> Decision matrix prompt.</span>
+                            <span data-lang="pl" class="hidden"><strong>Protokół "One Task":</strong> Matryca decyzyjna.</span>
+                        </span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check text-executive-gold mt-1"></i>
+                        <span class="text-gray-200">
+                            <span data-lang="en"><strong>Bonus:</strong> The "2025 Autopsy" Audit Workbook.</span>
+                            <span data-lang="pl" class="hidden"><strong>Bonus:</strong> Workbook Audytowy "Autopsja 2025".</span>
+                        </span>
+                    </div>
+                </div>
+
+                <a href="#" class="block w-full py-5 bg-executive-gold text-black font-black text-xl rounded-xl hover:bg-white transition duration-300 transform hover:scale-[1.02] shadow-lg text-center">
+                    <span data-lang="en">DOWNLOAD SYSTEM &bull; $49</span>
+                    <span data-lang="pl" class="hidden">POBIERZ SYSTEM &bull; $49</span>
+                </a>
+                <p class="mt-4 text-xs text-center text-gray-500">
+                    <span data-lang="en">Instant Digital Download. Works with Free ChatGPT/Claude.</span>
+                    <span data-lang="pl" class="hidden">Natychmiastowy Download. Działa z darmowym ChatGPT/Claude.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-gray-600 text-sm bg-black border-t border-gray-900">
+        <div class="mb-4">
+            <span class="text-xl font-black text-white tracking-tighter">ME, INC.<span class="text-executive-gold">.</span></span>
+        </div>
+        <p class="mb-4">&copy; 2025 Me, Inc. All rights reserved.</p>
+        <div class="flex justify-center gap-6">
+            <a href="#" class="hover:text-white transition">Terms</a>
+            <a href="#" class="hover:text-white transition">Privacy</a>
+            <a href="#" class="hover:text-white transition">Support</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Language Switcher Logic
+        const langEnBtn = document.getElementById('lang-en');
+        const langPlBtn = document.getElementById('lang-pl');
+        const enElements = document.querySelectorAll('[data-lang="en"]');
+        const plElements = document.querySelectorAll('[data-lang="pl"]');
+
+        function setLanguage(lang) {
+            if (lang === 'pl') {
+                enElements.forEach(el => el.classList.add('hidden'));
+                plElements.forEach(el => el.classList.remove('hidden'));
+                
+                langPlBtn.classList.remove('text-gray-500');
+                langPlBtn.classList.add('bg-executive-gold', 'text-black');
+                
+                langEnBtn.classList.remove('bg-executive-gold', 'text-black');
+                langEnBtn.classList.add('text-gray-500');
+            } else {
+                plElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                
+                langEnBtn.classList.remove('text-gray-500');
+                langEnBtn.classList.add('bg-executive-gold', 'text-black');
+                
+                langPlBtn.classList.remove('bg-executive-gold', 'text-black');
+                langPlBtn.classList.add('text-gray-500');
+            }
+        }
+
+        langEnBtn.addEventListener('click', () => setLanguage('en'));
+        langPlBtn.addEventListener('click', () => setLanguage('pl'));
+
+        // Default to PL for testing since prompt is PL, or Browser detection
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('pl')) {
+            setLanguage('pl');
+        } else {
+            setLanguage('en');
+        }
+    </script>
+</body>
+</html>
